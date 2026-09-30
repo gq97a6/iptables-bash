@@ -53,12 +53,3 @@ iptables -A INPUT -p icmpv6 -j ACCEPT
 #IPv6
 ip6tables -A INPUT -p icmpv6 -j ACCEPT
 #====================================================================================
-#Allow nebula =======================================================================
-#IPv4
-iptables -A INPUT -p udp --dport 4242 -m comment --comment "nebula" -j ACCEPT
-iptables -A INPUT -s 10.10.10.0/24 -m comment --comment "nebula" -j ACCEPT
-#IPv6
-ip6tables -A INPUT -p udp --dport 4242 -m comment --comment "nebula" -j ACCEPT
-#====================================================================================
-
-echo "Rules need to be saved to persistent file."
